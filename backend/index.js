@@ -14,6 +14,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/productsDB', {
     useUnifiedTopology: true,
 });
 
+const tax = '5%';
+
+//Product CRUD
 const ProductSchema = new mongoose.Schema({
     name: String,
     description: String,
@@ -26,7 +29,14 @@ const ProductSchema = new mongoose.Schema({
     tax: String,
 });
 
+const CategorySchema = new mongoose.Schema({
+    name: String,
+    image: String,
+    description: String
+})
+
 const Product = mongoose.model('Product', ProductSchema);
+const Category = mongoose.model('category', CategorySchema)
 
 app.get('/', (req, res) => {
     res.send('App is working');
