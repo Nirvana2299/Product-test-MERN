@@ -27,7 +27,10 @@ export default function Products() {
 
     return (
         <div>
-            <h1>Products</h1>
+        <Link to='/'><h1>
+            Home
+        </h1></Link>
+            <h2 style={{textAlign: 'center'}}>Products</h2>
             <ul>
                 {products.map(product => (
                     <li key={product._id}>
